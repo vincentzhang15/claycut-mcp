@@ -1,0 +1,47 @@
+{
+  "name": "setup-claycut",
+  "version": "1.2.5",
+  "description": "Custom icons for your app (clay, plush, editorial or your own style), built into Claude Code, Cursor, Windsurf, VS Code (Copilot) and Claude Desktop via MCP. Free starter set; packs from $5.",
+  "type": "module",
+  "bin": {
+    "setup-claycut": "index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node test.js"
+  },
+  "license": "MIT",
+  "homepage": "https://claycut.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincentzhang15/claycut-mcp.git",
+    "directory": "cli"
+  },
+  "bugs": {
+    "url": "https://github.com/vincentzhang15/claycut-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "cursor",
+    "windsurf",
+    "claude-code",
+    "vscode",
+    "copilot",
+    "claude",
+    "claude-desktop",
+    "icons",
+    "icon-generator",
+    "app-icons",
+    "3d-icons",
+    "claymorphism",
+    "ai",
+    "illustration"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}
