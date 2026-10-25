@@ -17,7 +17,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          registry-url: https://registry.npmjs.org
       - run: npm install -g npm@latest
       - run: npm test
-      - run: npm publish
+      # surface npm errors as annotations, readable without a GitHub login
+      - shell: bash
+        run: |
+          npm publish 2>&1 | tee publish.log || { echo "::error::$(tail -12 publish.log | tr '\n' ' ')"; exit 1; }
