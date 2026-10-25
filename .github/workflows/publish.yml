@@ -1,8 +1,9 @@
-# Stages setup-claycut on npm via trusted publishing (stage-only) when a v* tag is pushed; founder approves on npmjs.com.
+# Publishes setup-claycut to npm via trusted publishing when main gets a version not yet on npm.
 name: publish
 on:
   push:
-    tags: ['v*']
+    branches: [main]
+    paths: [cli/package.json, .github/workflows/publish.yml]
 permissions:
   id-token: write
   contents: read
@@ -22,4 +23,6 @@ jobs:
       # surface npm errors as annotations, readable without a GitHub login
       - shell: bash
         run: |
-          npm stage publish 2>&1 | tee publish.log || { echo "::error::$(tail -12 publish.log | tr '\n' ' ')"; exit 1; }
+          v=$(node -p "require('./package.json').version")
+          if npm view "setup-claycut@$v" version >/dev/null 2>&1; then echo "$v already on npm"; exit 0; fi
+          npm publish 2>&1 | tee publish.log || { echo "::error::$(tail -12 publish.log | tr '\n' ' ')"; exit 1; }
