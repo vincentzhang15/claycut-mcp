@@ -1,5 +1,7 @@
 <p align="center"><img src="https://claycut.dev/assets/brand/logo-v2.png" width="96" alt="Claycut"></p>
 
+<p align="center"><a href="https://glama.ai/mcp/connectors/io.github.vincentzhang15/claycut"><img src="https://glama.ai/mcp/connectors/io.github.vincentzhang15/claycut/badges/score.svg" alt="Claycut MCP connector"></a></p>
+
 # Claycut
 
 Custom icons for your app, added by your coding agent over MCP. Works in Claude Code, Cursor, Windsurf,
